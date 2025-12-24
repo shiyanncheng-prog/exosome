@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth" style="scroll-padding-top: 100px;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>芮妮絲 Renéxo - AI優選 頂級鹿茸幹細胞外泌體 | 長佳智能 x 中國醫藥大學北港附設醫院</title>
+    <meta name="description" content="長佳智能與中國醫藥大學北港附設醫院聯合推薦，芮妮絲 Renéxo 鹿茸外泌體系列。喚醒肌膚與髮絲的原生之美。">
+    
+    <!-- Tailwind CSS (via CDN for single file requirement) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts: Noto Sans TC & Cinzel (Luxury feel) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#0B1F4F',     // Tech Blue / Medical Authority
+                            lightBlue: '#E0F2FE', // Water/Hygiene
+                            gold: '#D4AF37',     // Champagne Gold / Luxury
+                            goldLight: '#F3E5AB',
+                            gray: '#F8FAFC'      // Clean Background
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Noto Sans TC"', 'sans-serif'],
+                        serif: ['"Cinzel"', 'serif'],
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "url('https://images.unsplash.com/photo-1530026405186-ed1f139313f8?q=80&w=2568&auto=format&fit=crop')",
+                        'dna-pattern': "linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.95)), url('https://img.freepik.com/free-vector/gradient-hexagonal-background_23-2148946765.jpg?w=1380&t=st=1709450000~exp=1709450600~hmac=abc')"
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Animations */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, visibility;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* Hexagon Shape Styling */
+        .hexagon {
+            width: 80px;
+            height: 92.38px;
+            background: linear-gradient(135deg, #0B1F4F 0%, #1e40af 100%);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            margin: 0 auto;
+            transition: transform 0.3s ease;
+        }
+        .hexagon:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Water Ripple Effect for Buttons */
+        .btn-ripple {
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-ripple::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease-out, height 0.6s ease-out;
+        }
+        .btn-ripple:hover::after {
+            width: 300px;
+            height: 300px;
+        }
+
+        /* Gradient Text */
+        .text-gradient-gold {
+            background: linear-gradient(to right, #D4AF37, #F3E5AB, #D4AF37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: shine 3s linear infinite;
+        }
+
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        /* AI Chat Widget Styling */
+        .chat-widget {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .chat-button {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #0B1F4F 0%, #1e40af 100%);
+            color: #D4AF37;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(11, 31, 79, 0.4);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .chat-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(11, 31, 79, 0.6);
+        }
+        
+        .chat-button::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            border: 2px solid #D4AF37;
+            opacity: 0;
+            animation: pulse-gold 2s infinite;
+        }
+        
+        @keyframes pulse-gold {
+            0% { transform: scale(1); opacity: 0.8; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+
+        .chat-window {
+            width: 350px;
+            height: 500px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            margin-bottom: 1rem;
+            transform-origin: bottom right;
+            transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+            opacity: 0;
+            transform: scale(0);
+            pointer-events: none;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            position: relative;
+        }
+
+        .chat-window.open {
+            opacity: 1;
+            transform: scale(1);
+            pointer-events: all;
+        }
+
+        .chat-header {
+            background: #0B1F4F;
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #D4AF37;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 1rem;
+            overflow-y: auto;
+            background: #F8FAFC;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .message {
+            max-width: 85%;
+            padding: 0.8rem 1rem;
+            border-radius: 1rem;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            position: relative;
+        }
+
+        .message.ai {
+            align-self: flex-start;
+            background: white;
+            color: #334155;
+            border-bottom-left-radius: 0.2rem;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .message.user {
+            align-self: flex-end;
+            background: linear-gradient(135deg, #D4AF37 0%, #b8952b 100%);
+            color: white;
+            border-bottom-right-radius: 0.2rem;
+            box-shadow: 0 2px 5px rgba(212, 175, 55, 0.3);
+        }
+
+        .typing-indicator span {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background-color: #94a3b8;
+            border-radius: 50%;
+            animation: typing 1.4s infinite ease-in-out both;
+            margin: 0 2px;
+        }
+
+        .typing-indicator span:nth-child(1) { animation-delay: -0.32s; }
+        .typing-indicator span:nth-child(2) { animation-delay: -0.16s; }
+
+        @keyframes typing {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1); }
+        }
+
+        .chat-input-area {
+            padding: 1rem;
+            background: white;
+            border-top: 1px solid #e2e8f0;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 0.8rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 2rem;
+            outline: none;
+            font-size: 0.9rem;
+            transition: border-color 0.3s;
+        }
+
+        .chat-input:focus {
+            border-color: #D4AF37;
+        }
+
+        .send-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #0B1F4F;
+            color: #D4AF37;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .send-btn:hover {
+            background: #1e3a8a;
+        }
+
+        /* Voice Button in Chat */
+        .voice-btn {
+            font-size: 0.8rem;
+            color: #0B1F4F;
+            margin-top: 0.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+        .voice-btn:hover {
+            opacity: 1;
+        }
+
+        /* API Key Screen */
+        #apiKeyScreen {
+            backdrop-filter: blur(5px);
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-700 bg-brand-gray antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <!-- Logo Placeholders -->
+                <div class="text-2xl font-serif font-bold text-brand-blue tracking-widest">RENÉXO</div>
+                <div class="h-6 w-px bg-gray-300 mx-2 hidden md:block"></div>
+                <div class="text-xs text-gray-500 hidden md:block leading-tight">
+                    長佳智能<br>Ever Fortune.AI
+                </div>
+            </div>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
+                <a href="#science" class="hover:text-brand-blue transition">外泌體科技</a>
+                <a href="#face-serum" class="hover:text-brand-blue transition">奇肌精萃</a>
+                <a href="#hair-serum" class="hover:text-brand-blue transition">蘊髮精萃</a>
+                <a href="#trust" class="hover:text-brand-blue transition">權威認證</a>
+                <a href="#contact" class="px-6 py-2 bg-brand-blue text-white rounded-full hover:bg-blue-800 transition shadow-lg btn-ripple">
+                    預約諮詢
+                </a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-brand-blue text-2xl" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full">
+            <div class="flex flex-col p-4 gap-4 text-center">
+                <a href="#science" class="text-gray-600" onclick="toggleMenu()">外泌體科技</a>
+                <a href="#face-serum" class="text-gray-600" onclick="toggleMenu()">奇肌精萃</a>
+                <a href="#hair-serum" class="text-gray-600" onclick="toggleMenu()">蘊髮精萃</a>
+                <a href="#trust" class="text-gray-600" onclick="toggleMenu()">權威認證</a>
+                <a href="#contact" class="text-brand-blue font-bold" onclick="toggleMenu()">立即諮詢</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+        <!-- Background Video/Image Simulation -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=2574&auto=format&fit=crop" 
+                 class="w-full h-full object-cover opacity-90" alt="Tech Background">
+            <!-- Tech Overlay Gradient -->
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-blue/90 via-brand-blue/60 to-transparent"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-12 items-center">
+            <div class="text-white space-y-6 fade-in-section">
+                <div class="inline-block px-3 py-1 border border-brand-gold/50 rounded-full text-brand-gold text-xs tracking-wider uppercase bg-brand-blue/50 backdrop-blur-sm mb-2">
+                    長佳智能 x 中國醫藥大學北港附設醫院 聯合推薦
+                </div>
+                <h1 class="text-4xl md:text-6xl font-serif font-bold leading-tight">
+                    喚醒肌膚與髮絲的<br>
+                    <span class="text-gradient-gold">原生之美</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-200 font-light max-w-lg">
+                    AI 優選・頂級鹿茸幹細胞外泌體。<br>
+                    源自生命的修護力量，啟動逆齡再生的關鍵鑰匙。
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                    <a href="#contact" class="px-8 py-4 bg-brand-gold text-brand-blue font-bold rounded-full hover:bg-yellow-400 transition shadow-xl text-center btn-ripple">
+                        預約專業諮詢
+                    </a>
+                    <a href="#science" class="px-8 py-4 border border-white/30 text-white rounded-full hover:bg-white/10 transition text-center backdrop-blur-sm">
+                        了解外泌體科技
+                    </a>
+                </div>
+            </div>
+            <!-- Visual Element: Floating Molecules/Hexagons -->
+            <div class="hidden md:flex justify-center relative fade-in-section">
+                <div class="relative w-80 h-80 animate-pulse">
+                    <!-- Abstract DNA/Cell Visual -->
+                    <div class="absolute inset-0 border-2 border-brand-gold/30 rounded-full animate-[spin_10s_linear_infinite]"></div>
+                    <div class="absolute inset-4 border border-brand-blue/50 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
+                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
+                        <i class="fas fa-dna text-6xl text-brand-gold opacity-80"></i>
+                        <p class="mt-4 text-sm text-brand-gold/80 font-serif">Renéxo Tech</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Down Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+            <i class="fas fa-chevron-down text-2xl opacity-70"></i>
+        </div>
+    </header>
+
+    <!-- Science Section -->
+    <section id="science" class="py-24 bg-white relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16 fade-in-section">
+                <h2 class="text-3xl md:text-4xl font-bold text-brand-blue mb-4 font-serif">什麼是外泌體 (Exosomes)?</h2>
+                <div class="w-16 h-1 bg-brand-gold mx-auto mb-6"></div>
+                <p class="text-gray-600 leading-relaxed">
+                    源自諾貝爾獎技術的啟發，外泌體被譽為<strong class="text-brand-blue">「細胞的傳令兵」</strong>。
+                    它們是直徑僅 30-150 奈米的微小囊泡，攜帶豐富的生長因子與修復訊號，能精準滲透，喚醒沉睡肌底。
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <!-- Feature 1 -->
+                <div class="p-8 bg-brand-gray rounded-2xl hover:shadow-xl transition duration-300 fade-in-section border border-gray-100 group">
+                    <div class="hexagon mb-6 mx-auto group-hover:scale-110 transition duration-300">
+                        <i class="fas fa-microscope text-2xl text-brand-gold"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-blue mb-3">高修護力</h3>
+                    <p class="text-gray-500 text-sm">富含多種活性因子，主動搜尋受損部位進行精準修護，重啟再生機制。</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="p-8 bg-brand-gray rounded-2xl hover:shadow-xl transition duration-300 fade-in-section border border-gray-100 group" style="transition-delay: 100ms;">
+                    <div class="hexagon mb-6 mx-auto group-hover:scale-110 transition duration-300">
+                        <i class="fas fa-bullseye text-2xl text-brand-gold"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-blue mb-3">高滲透性</h3>
+                    <p class="text-gray-500 text-sm">奈米等級分子結構，能輕易穿透角質層屏障，直達肌膚與髮根深層。</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="p-8 bg-brand-gray rounded-2xl hover:shadow-xl transition duration-300 fade-in-section border border-gray-100 group" style="transition-delay: 200ms;">
+                    <div class="hexagon mb-6 mx-auto group-hover:scale-110 transition duration-300">
+                        <i class="fas fa-hand-holding-heart text-2xl text-brand-gold"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-blue mb-3">高相容性</h3>
+                    <p class="text-gray-500 text-sm">生物相容性極佳，易於被細胞吸收利用，大幅降低排斥與敏感風險。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product 1: Facial Serum -->
+    <section id="face-serum" class="py-24 bg-brand-lightBlue/30 overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Image Side -->
+                <div class="relative fade-in-section order-2 lg:order-1">
+                    <div class="absolute -top-10 -left-10 w-64 h-64 bg-brand-gold/20 rounded-full blur-3xl"></div>
+                    <!-- LOCAL IMAGE FILE -->
+                    <img src="極泌奇肌精萃.png" 
+                         alt="極泌奇肌精萃" 
+                         class="relative z-10 w-full h-[500px] object-cover rounded-3xl shadow-2xl">
+                    <div class="absolute bottom-6 right-6 z-20 bg-white/90 backdrop-blur p-4 rounded-xl shadow-lg border border-brand-gold/30">
+                        <p class="text-brand-blue font-bold text-sm">凍乾粉技術</p>
+                        <p class="text-xs text-gray-500">100% 鎖住活性</p>
+                    </div>
+                </div>
+
+                <!-- Content Side -->
+                <div class="fade-in-section order-1 lg:order-2">
+                    <span class="text-brand-gold font-bold tracking-widest text-sm uppercase">Facial Serum</span>
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-brand-blue mt-2 mb-6">極泌奇肌精萃</h2>
+                    
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        結合傳明酸、賽洛美與積雪草的黃金配方。透過高純度鹿茸外泌體，啟動肌膚深層修護力，撫平歲月痕跡，重現水光奇肌。
+                    </p>
+
+                    <!-- Key Ingredients -->
+                    <div class="flex gap-4 mb-10 overflow-x-auto pb-2">
+                        <span class="px-4 py-2 bg-white border border-brand-blue/10 rounded-full text-brand-blue text-sm font-medium whitespace-nowrap">#鹿茸外泌體</span>
+                        <span class="px-4 py-2 bg-white border border-brand-blue/10 rounded-full text-brand-blue text-sm font-medium whitespace-nowrap">#傳明酸</span>
+                        <span class="px-4 py-2 bg-white border border-brand-blue/10 rounded-full text-brand-blue text-sm font-medium whitespace-nowrap">#賽洛美</span>
+                        <span class="px-4 py-2 bg-white border border-brand-blue/10 rounded-full text-brand-blue text-sm font-medium whitespace-nowrap">#積雪草</span>
+                    </div>
+
+                    <!-- Data Visualization -->
+                    <div class="space-y-6">
+                        <h4 class="font-bold text-brand-blue flex items-center gap-2">
+                            <i class="fas fa-chart-line text-brand-gold"></i> 臨床實證數據
+                        </h4>
+                        
+                        <!-- Data Item 1 -->
+                        <div>
+                            <div class="flex justify-between text-sm mb-1 font-medium">
+                                <span class="text-gray-600">光澤度增加</span>
+                                <span class="text-brand-blue font-bold count-up" data-target="133.3">0</span>%
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-brand-gold h-2.5 rounded-full transition-all duration-1000 ease-out w-0 progress-bar" data-width="100%"></div>
+                            </div>
+                        </div>
+
+                        <!-- Data Item 2 -->
+                        <div>
+                            <div class="flex justify-between text-sm mb-1 font-medium">
+                                <span class="text-gray-600">含水量增加</span>
+                                <span class="text-brand-blue font-bold count-up" data-target="103.7">0</span>%
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-brand-blue h-2.5 rounded-full transition-all duration-1000 ease-out w-0 progress-bar" data-width="80%"></div>
+                            </div>
+                        </div>
+
+                         <!-- Data Item 3 -->
+                         <div>
+                            <div class="flex justify-between text-sm mb-1 font-medium">
+                                <span class="text-gray-600">皮膚細紋降低</span>
+                                <span class="text-brand-blue font-bold count-up" data-target="44.8">0</span>%
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-gray-400 h-2.5 rounded-full transition-all duration-1000 ease-out w-0 progress-bar" data-width="45%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product 2: Scalp Serum -->
+    <section id="hair-serum" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Content Side -->
+                <div class="fade-in-section">
+                    <span class="text-brand-gold font-bold tracking-widest text-sm uppercase">Scalp Serum</span>
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-brand-blue mt-2 mb-6">極泌蘊髮精萃</h2>
+                    
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        針對脆弱稀疏髮質設計。蘊含藍銅胜肽、咖啡因與紅苜蓿，協同鹿茸外泌體強健髮根，優化頭皮環境，再現豐盈生命力。
+                    </p>
+
+                     <!-- Key Ingredients -->
+                     <div class="flex gap-4 mb-10 overflow-x-auto pb-2">
+                        <span class="px-4 py-2 bg-brand-gray border border-brand-blue/10 rounded-full text-brand-blue text-sm font-medium whitespace-nowrap">#藍銅胜肽</span>
+                        <span class="px-4 py-2 bg-brand-gray border border-brand-blue/10 rounded-full text-brand-blue text-sm font-medium whitespace-nowrap">#咖啡因</span>
+                        <span class="px-4 py-2 bg-brand-gray border border-brand-blue/10 rounded-full text-brand-blue text-sm font-medium whitespace-nowrap">#紅苜蓿</span>
+                    </div>
+
+                    <!-- Data Grid Stats -->
+                    <div class="grid grid-cols-3 gap-4 text-center mt-8">
+                        <div class="p-4 bg-brand-gray rounded-xl border border-gray-100">
+                            <div class="text-2xl font-bold text-brand-blue mb-1"><span class="count-up" data-target="40.4">0</span>%</div>
+                            <div class="text-xs text-gray-500">油脂分泌降低</div>
+                            <i class="fas fa-arrow-down text-green-500 text-xs mt-2"></i>
+                        </div>
+                        <div class="p-4 bg-brand-gray rounded-xl border border-gray-100">
+                            <div class="text-2xl font-bold text-brand-blue mb-1"><span class="count-up" data-target="8.7">0</span>%</div>
+                            <div class="text-xs text-gray-500">髮量增加</div>
+                            <i class="fas fa-arrow-up text-red-500 text-xs mt-2"></i>
+                        </div>
+                        <div class="p-4 bg-brand-gray rounded-xl border border-gray-100">
+                            <div class="text-2xl font-bold text-brand-blue mb-1"><span class="count-up" data-target="7.7">0</span>%</div>
+                            <div class="text-xs text-gray-500">黑色素增加</div>
+                            <i class="fas fa-arrow-up text-brand-blue text-xs mt-2"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Side -->
+                <div class="relative fade-in-section">
+                    <div class="absolute -bottom-10 -right-10 w-64 h-64 bg-brand-blue/10 rounded-full blur-3xl"></div>
+                    <!-- LOCAL IMAGE FILE -->
+                    <img src="極泌蘊髮精萃.png" 
+                         alt="極泌蘊髮精萃" 
+                         class="relative z-10 w-full h-[500px] object-cover rounded-3xl shadow-2xl filter brightness-95">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust & Safety -->
+    <section id="trust" class="py-20 bg-brand-blue text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-serif font-bold mb-12">權威認證・安全承諾</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <!-- Cert 1 -->
+                <div class="bg-white/10 backdrop-blur-md p-8 rounded-xl border border-white/20 fade-in-section">
+                    <div class="w-16 h-16 bg-brand-gold rounded-full flex items-center justify-center mx-auto mb-6 text-brand-blue text-2xl">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">INCI 國際認證</h3>
+                    <p class="text-sm text-gray-300">台灣第一支取得 Exosomes 命名核可，符合國際化妝品原料規範。</p>
+                </div>
+                <!-- Cert 2 -->
+                <div class="bg-white/10 backdrop-blur-md p-8 rounded-xl border border-white/20 fade-in-section" style="transition-delay: 100ms;">
+                    <div class="w-16 h-16 bg-brand-gold rounded-full flex items-center justify-center mx-auto mb-6 text-brand-blue text-2xl">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">專利技術</h3>
+                    <p class="text-sm text-gray-300">擁有專利證書，保障技術獨特性與產品效能。</p>
+                </div>
+                <!-- Cert 3 -->
+                <div class="bg-white/10 backdrop-blur-md p-8 rounded-xl border border-white/20 fade-in-section" style="transition-delay: 200ms;">
+                    <div class="w-16 h-16 bg-brand-gold rounded-full flex items-center justify-center mx-auto mb-6 text-brand-blue text-2xl">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">安全無虞</h3>
+                    <p class="text-sm text-gray-300">通過人體貼膚測試，無刺激性報告，敏感肌亦可安心使用。</p>
+                </div>
+            </div>
+            
+            <!-- Patent Certificate Image -->
+            <div class="max-w-4xl mx-auto p-4 bg-white/5 rounded-2xl border border-white/10 fade-in-section">
+               <!-- LOCAL IMAGE FILE -->
+               <img src="外泌體專利證書.png" alt="長佳智能專利證書" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact -->
+    <section id="contact" class="py-24 bg-brand-gray relative">
+        <div class="container mx-auto px-6">
+            <div class="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100 flex flex-col md:flex-row">
+                <!-- Info Side -->
+                <div class="p-10 md:w-1/3 bg-brand-blue text-white flex flex-col justify-center">
+                    <h3 class="text-2xl font-serif font-bold mb-6">指定專業諮詢</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-hospital-alt text-brand-gold mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-lg">中國醫藥大學北港附設醫院</h4>
+                                <p class="text-brand-gold font-medium">婦產科</p>
+                                <p class="text-sm text-gray-300 mt-1">雲林縣北港鎮新德路123號</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <i class="fas fa-phone-alt text-brand-gold"></i>
+                            <div>
+                                <p class="text-sm text-gray-300">諮詢專線</p>
+                                <a href="tel:057837901" class="text-xl font-bold hover:text-brand-gold transition">05-783-7901 轉 1623</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <i class="fas fa-clock text-brand-gold"></i>
+                            <div>
+                                <p class="text-sm text-gray-300">門診時間</p>
+                                <p class="font-medium">週一至週五 08:30 - 17:00</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="tel:057837901" class="mt-10 block w-full py-4 bg-brand-gold text-brand-blue font-bold text-center rounded-lg hover:bg-yellow-400 transition btn-ripple">
+                        撥打婦產科諮詢電話
+                    </a>
+                </div>
+
+                <!-- Map Side -->
+                <div class="md:w-2/3 h-96 md:h-auto relative">
+                    <!-- Embedded Google Maps for Beigang Hospital -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3655.074069351052!2d120.29827407598835!3d23.637508093202976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346ebd46911c471b%3A0x6a0537482f3c7e7f!2z5Lit5ZyL6Yar6IOl5aSn5a245YyX5riv6ZmE6Kit5Yar6Zmi!5e0!3m2!1szh-TW!2stw!4v1709455000000!5m2!1szh-TW!2stw" 
+                            class="absolute inset-0 w-full h-full border-0" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    
+                    <a href="https://maps.google.com/?q=中國醫藥大學北港附設醫院" target="_blank" 
+                       class="absolute bottom-6 right-6 bg-white px-4 py-2 rounded-lg shadow-lg text-brand-blue text-sm font-bold flex items-center gap-2 hover:bg-gray-50 transition">
+                        <i class="fas fa-location-arrow"></i> 點擊導航
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-8 text-sm text-center border-t border-gray-800">
+        <div class="container mx-auto px-6">
+            <p class="mb-2">© 2024 長佳智能股份有限公司 Ever Fortune.AI Co., Ltd. All Rights Reserved.</p>
+            <p>本網站內容僅供醫療專業人士參考，實際療程請諮詢醫師。</p>
+        </div>
+    </footer>
+
+    <!-- AI Chat Widget -->
+    <div class="chat-widget">
+        <!-- Chat Window -->
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-robot text-brand-gold"></i>
+                    <div>
+                        <h4 class="font-bold text-sm">Renéxo AI 智能顧問</h4>
+                        <span class="text-xs text-brand-gold opacity-80">長佳智能 AI 技術支援 ✨</span>
+                    </div>
+                </div>
+                <!-- Controls -->
+                <div class="flex items-center gap-2">
+                     <!-- Settings Button -->
+                    <button onclick="toggleSettings()" class="text-white hover:text-brand-gold transition" title="設定 API Key">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                    <!-- Close Button -->
+                    <button onclick="toggleChat()" class="text-white hover:text-brand-gold transition">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- API Key Configuration Screen -->
+            <div id="apiKeyScreen" class="absolute inset-0 bg-white z-20 flex flex-col p-6 hidden">
+                <div class="flex-1 flex flex-col justify-center">
+                    <h3 class="text-brand-blue font-bold text-lg mb-2 text-center">設定 API Key</h3>
+                    <p class="text-sm text-gray-500 mb-6 text-center">請輸入您的 Google Gemini API Key <br>以啟用 AI 智能諮詢服務。</p>
+                    
+                    <label class="text-xs font-bold text-gray-700 mb-1 ml-1">API Key</label>
+                    <input type="password" id="apiKeyInput" class="w-full p-3 border border-gray-300 rounded-lg mb-6 focus:border-brand-gold outline-none shadow-inner bg-gray-50" placeholder="貼上您的 API Key...">
+                    
+                    <button onclick="saveApiKey()" class="w-full py-3 bg-brand-blue text-white rounded-lg font-bold hover:bg-blue-800 transition shadow-lg btn-ripple">
+                        儲存並開始
+                    </button>
+                    
+                    <p class="text-xs text-center mt-6 text-gray-400">
+                        <a href="https://aistudio.google.com/app/apikey" target="_blank" class="underline hover:text-brand-blue flex items-center justify-center gap-1">
+                            <i class="fas fa-external-link-alt"></i> 取得免費 API Key
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="chat-messages" id="chatMessages">
+                <!-- Welcome Message -->
+                <div class="message ai">
+                    <p>您好，我是 Renéxo 的 AI 智能顧問。✨<br>
+                    很高興為您服務。請問您目前有肌膚老化、細紋，或是頭皮落髮的困擾嗎？</p>
+                    <p class="text-xs text-gray-400 mt-2">我可以為您推薦適合的鹿茸外泌體產品。</p>
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" id="chatInput" class="chat-input" placeholder="例如：我有細紋困擾..." onkeypress="handleKeyPress(event)">
+                <button class="send-btn" onclick="sendMessage()">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Toggle Button -->
+        <div class="chat-button" onclick="toggleChat()">
+            <i class="fas fa-comment-medical"></i>
+        </div>
+    </div>
+
+    <!-- JavaScript Interactions -->
+    <script>
+        // 1. Mobile Menu Toggle
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // 2. Intersection Observer for Fade-in Animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.2
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target); // Only animate once
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // 3. Number Counter & Progress Bar Animation
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Trigger Count Up
+                    const counters = entry.target.querySelectorAll('.count-up');
+                    counters.forEach(counter => {
+                        const target = parseFloat(counter.getAttribute('data-target'));
+                        const duration = 2000; // 2 seconds
+                        const step = target / (duration / 16); 
+                        let current = 0;
+
+                        const updateCount = () => {
+                            current += step;
+                            if (current < target) {
+                                counter.innerText = current.toFixed(1);
+                                requestAnimationFrame(updateCount);
+                            } else {
+                                counter.innerText = target.toFixed(1);
+                            }
+                        };
+                        updateCount();
+                    });
+
+                    // Trigger Progress Bars
+                    const bars = entry.target.querySelectorAll('.progress-bar');
+                    bars.forEach(bar => {
+                        bar.style.width = bar.getAttribute('data-width');
+                    });
+
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        // Observe sections that contain numbers
+        document.querySelectorAll('#face-serum, #hair-serum').forEach(section => {
+            statsObserver.observe(section);
+        });
+
+        // 4. Navbar Background on Scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.replace('py-4', 'py-2');
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.classList.replace('py-2', 'py-4');
+            }
+        });
+
+        /* --- Gemini AI Chat Logic --- */
+        const chatWindow = document.getElementById('chatWindow');
+        const chatMessages = document.getElementById('chatMessages');
+        const chatInput = document.getElementById('chatInput');
+        const apiKeyScreen = document.getElementById('apiKeyScreen');
+        const apiKeyInput = document.getElementById('apiKeyInput');
+        
+        // Retrieve stored key or default to empty
+        let userApiKey = localStorage.getItem('renexo_api_key') || "";
+
+        function toggleChat() {
+            chatWindow.classList.toggle('open');
+            if (chatWindow.classList.contains('open')) {
+                // If no API key, show settings screen
+                if (!userApiKey) {
+                    apiKeyScreen.classList.remove('hidden');
+                    setTimeout(() => apiKeyInput.focus(), 300);
+                } else {
+                    apiKeyScreen.classList.add('hidden');
+                    setTimeout(() => chatInput.focus(), 300);
+                }
+            }
+        }
+
+        function toggleSettings() {
+            apiKeyScreen.classList.toggle('hidden');
+            if (!apiKeyScreen.classList.contains('hidden')) {
+                apiKeyInput.value = userApiKey;
+                setTimeout(() => apiKeyInput.focus(), 100);
+            }
+        }
+
+        function saveApiKey() {
+            const key = apiKeyInput.value.trim();
+            if (key) {
+                userApiKey = key;
+                localStorage.setItem('renexo_api_key', key);
+                apiKeyScreen.classList.add('hidden');
+                
+                // Optional: visual feedback
+                const btn = document.querySelector('.chat-button');
+                btn.style.transform = 'scale(1.2)';
+                setTimeout(() => btn.style.transform = 'scale(1)', 200);
+                
+                // Add a system message if needed
+                // addMessage("API Key 已成功儲存！", 'ai');
+            } else {
+                alert("請輸入有效的 API Key");
+            }
+        }
+
+        function handleKeyPress(e) {
+            if (e.key === 'Enter') sendMessage();
+        }
+
+        async function sendMessage() {
+            const text = chatInput.value.trim();
+            if (!text) return;
+
+            // Check API Key first
+            if (!userApiKey) {
+                toggleSettings();
+                return;
+            }
+
+            // Add User Message
+            addMessage(text, 'user');
+            chatInput.value = '';
+
+            // Add Loading Indicator
+            const loadingId = addLoadingIndicator();
+
+            try {
+                // Call Gemini API
+                const response = await callGeminiAPI(text);
+                removeMessage(loadingId);
+                const aiMsgId = addMessage(response, 'ai');
+                
+                // Add TTS Button to the AI message
+                addTTSButton(aiMsgId, response);
+                
+            } catch (error) {
+                removeMessage(loadingId);
+                addMessage("抱歉，發生錯誤或 API Key 無效。請檢查您的連線與設定。", 'ai');
+                console.error(error);
+                // If 403 or 400, might be invalid key
+                if (error.message.includes('400') || error.message.includes('403')) {
+                    toggleSettings();
+                }
+            }
+        }
+
+        function addMessage(text, sender) {
+            const div = document.createElement('div');
+            const id = 'msg-' + Date.now();
+            div.id = id;
+            div.className = `message ${sender}`;
+            div.innerHTML = `<p>${text.replace(/\n/g, '<br>')}</p>`;
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            return id;
+        }
+
+        function addLoadingIndicator() {
+            const div = document.createElement('div');
+            const id = 'loading-' + Date.now();
+            div.id = id;
+            div.className = 'message ai typing-indicator';
+            div.innerHTML = '<span></span><span></span><span></span>';
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            return id;
+        }
+
+        function removeMessage(id) {
+            const el = document.getElementById(id);
+            if (el) el.remove();
+        }
+
+        function addTTSButton(parentId, text) {
+            const parent = document.getElementById(parentId);
+            if (!parent) return;
+
+            const btn = document.createElement('div');
+            btn.className = 'voice-btn';
+            btn.innerHTML = '<i class="fas fa-volume-up"></i> 播放語音';
+            btn.onclick = () => playTTS(text, btn);
+            parent.appendChild(btn);
+        }
+
+        // Gemini Text Generation
+        async function callGeminiAPI(userQuery) {
+            const systemPrompt = `
+                Role: You are the AI Consultant for Renéxo (芮妮絲), a luxury medical aesthetic brand by Ever Fortune.AI.
+                Tone: Professional, elegant, empathetic, trustworthy (Traditional Chinese).
+                
+                Products Knowledge:
+                1. Facial Serum (極泌奇肌精萃):
+                   - Ingredients: Deer Velvet Exosomes, Tranexamic Acid, Ceramide, Centella Asiatica.
+                   - Benefits: Reduces wrinkles (-44.8%), Increases hydration (+103.7%), Brightening.
+                   - Target: Aging skin, fine lines, dryness.
+                
+                2. Scalp Serum (極泌蘊髮精萃):
+                   - Ingredients: Copper Peptide, Caffeine, Red Clover.
+                   - Benefits: Reduces scalp oil (-40.4%), Increases hair volume (+8.7%), Darkens hair (+7.7%).
+                   - Target: Hair loss, oily scalp, thinning hair.
+
+                Instructions:
+                - Analyze the user's query to recommend the correct product.
+                - Briefly explain why based on ingredients.
+                - ALWAYS end by suggesting they visit "中國醫藥大學北港附設醫院 (媽祖醫院) 婦產科" for a consultation.
+                - Keep response under 100 words.
+            `;
+
+            // Use the user-provided API key
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${userApiKey}`;
+            
+            const payload = {
+                contents: [{ parts: [{ text: userQuery }] }],
+                systemInstruction: { parts: [{ text: systemPrompt }] }
+            };
+
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+
+            if (!response.ok) {
+                throw new Error(`API Error: ${response.status}`);
+            }
+
+            const data = await response.json();
+            return data.candidates?.[0]?.content?.parts?.[0]?.text || "無法取得回應";
+        }
+
+        // Gemini TTS
+        async function playTTS(text, btnElement) {
+            if (btnElement.dataset.playing === 'true') return;
+            
+            // Check API Key
+            if (!userApiKey) {
+                toggleSettings();
+                return;
+            }
+
+            const originalText = btnElement.innerHTML;
+            btnElement.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 生成語音中...';
+            btnElement.dataset.playing = 'true';
+
+            try {
+                // Use the user-provided API key
+                const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=${userApiKey}`;
+                const payload = {
+                    contents: [{ parts: [{ text: text }] }],
+                    generationConfig: {
+                        responseModalities: ["AUDIO"],
+                        speechConfig: {
+                            voiceConfig: {
+                                prebuiltVoiceConfig: {
+                                    voiceName: "Kore" // Gentle female voice
+                                }
+                            }
+                        }
+                    }
+                };
+
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                     throw new Error(`API Error: ${response.status}`);
+                }
+
+                const data = await response.json();
+                const audioContent = data.candidates?.[0]?.content?.parts?.[0]?.inlineData?.data;
+
+                if (audioContent) {
+                    // Convert base64 to blob and play
+                    const binaryString = window.atob(audioContent);
+                    const bytes = new Uint8Array(binaryString.length);
+                    for (let i = 0; i < binaryString.length; i++) {
+                        bytes[i] = binaryString.charCodeAt(i);
+                    }
+                    
+                    const wavBytes = addWavHeader(bytes, 24000, 1); // Assuming 24kHz mono from standard config
+                    const blob = new Blob([wavBytes], { type: 'audio/wav' });
+                    const audioUrl = URL.createObjectURL(blob);
+                    const audio = new Audio(audioUrl);
+                    
+                    btnElement.innerHTML = '<i class="fas fa-volume-high"></i> 播放中...';
+                    audio.play();
+                    
+                    audio.onended = () => {
+                        btnElement.innerHTML = originalText;
+                        btnElement.dataset.playing = 'false';
+                    };
+                } else {
+                    throw new Error("No audio content");
+                }
+
+            } catch (error) {
+                console.error("TTS Error:", error);
+                btnElement.innerHTML = '<i class="fas fa-exclamation-circle"></i> 播放失敗';
+                setTimeout(() => {
+                    btnElement.innerHTML = originalText;
+                    btnElement.dataset.playing = 'false';
+                }, 2000);
+            }
+        }
+
+        // Helper to add WAV header to raw PCM data
+        function addWavHeader(samples, sampleRate, numChannels) {
+            const buffer = new ArrayBuffer(44 + samples.length);
+            const view = new DataView(buffer);
+            
+            const writeString = (view, offset, string) => {
+                for (let i = 0; i < string.length; i++) {
+                    view.setUint8(offset + i, string.charCodeAt(i));
+                }
+            };
+
+            writeString(view, 0, 'RIFF');
+            view.setUint32(4, 36 + samples.length, true);
+            writeString(view, 8, 'WAVE');
+            writeString(view, 12, 'fmt ');
+            view.setUint32(16, 16, true);
+            view.setUint16(20, 1, true); // PCM format
+            view.setUint16(22, numChannels, true);
+            view.setUint32(24, sampleRate, true);
+            view.setUint32(28, sampleRate * numChannels * 2, true);
+            view.setUint16(32, numChannels * 2, true);
+            view.setUint16(34, 16, true); // 16 bits per sample
+            writeString(view, 36, 'data');
+            view.setUint32(40, samples.length, true);
+
+            const dataView = new Uint8Array(buffer);
+            dataView.set(samples, 44);
+
+            return buffer;
+        }
+
+    </script>
+</body>
+</html>
